@@ -1,0 +1,148 @@
+{
+  "GlobalConfiguration": {
+    "BaseUrl": "https://localhost:5003"
+  },
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/api/catalog",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/catalog",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 60
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/catalog/GetCatalogItem/{catalogItemId}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/catalog/GetCatalogItem/{catalogItemId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 60
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/catalog",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/catalog",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/catalog",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/catalog",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 3
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/catalog/{categoryId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/catalog/{categoryId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 1
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/cart",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamPathTemplate": "/cartingservice",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "FileCacheOptions": {
+        "TtlSeconds": 60
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/cart",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamPathTemplate": "/cartingservice",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ]
+    },
+    {
+      "UpstreamPathTemplate": "/api/cart",
+      "UpstreamHttpMethod": [ "Put" ],
+      "DownstreamPathTemplate": "/cartingservice",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 3
+      }
+    },
+    {
+      "UpstreamPathTemplate": "/api/cart/{categoryId}",
+      "UpstreamHttpMethod": [ "Delete" ],
+      "DownstreamPathTemplate": "/cart/{categoryId}",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7065
+        }
+      ],
+      "RateLimitOptions": {
+        "EnableRateLimiting": true,
+        "Period": "10s",
+        "PeriodTimespan": 10,
+        "Limit": 1
+      }
+    }
+  ]
+}
